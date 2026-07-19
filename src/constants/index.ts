@@ -16,8 +16,8 @@ import {
   medicalReportAnalyzer,
   html5,
   uptoskills,
-  ibm,
-  interninfobyte,
+  akstore,
+  java,
   mobile,
   backend,
   creator,
@@ -29,6 +29,7 @@ import {
   tailwind,
   nodejs,
   mongodb,
+  java1,
   git,
   docker,
 } from "../assets";
@@ -101,6 +102,10 @@ const technologies: TTechnology[] = [
     icon: mongodb,
   },
   {
+    name: "Java",
+    icon: java1,
+  },
+  {
     name: "Git",
     icon: git,
   },
@@ -125,44 +130,45 @@ const experiences: TExperience[] = [
     ],
   },
   {
-    title: "Full Stack Developer Intern",
-    companyName: "UptoSkills",
+    title: "Full Stack Development, Generative AI & Cloud Computing Intern",
+    companyName: "UptoSkills • Intern Infobyte • IBM SkillBuild x BharatCares",
     icon: uptoskills,
     iconBg: "#383E56",
     date: "May 2026 - August 2026",
     points: [
-      "Completed a 3-month Full Stack Development internship focused on the MERN Stack.",
-      "Built a production-ready E-Commerce platform with authentication, cart, payment gateway and admin dashboard.",
-      "Developed Weather App, Movie Recommendation System and Todo Application using React and REST APIs.",
-      "Worked on backend APIs using Node.js, Express.js and MongoDB following industry-standard coding practices."
+      "Completed Full Stack Development internships with UptoSkills and Intern Infobyte, gaining hands-on experience in building modern MERN Stack applications.",
+      "Developed production-ready web applications including an E-Commerce Platform, Weather App, Movie Recommendation System, and Todo Application using React.js, Node.js, Express.js, MongoDB, and REST APIs.",
+      "Implemented authentication, CRUD operations, payment gateway integration, admin dashboard, responsive UI, and secure backend architecture following industry-standard coding practices.",
+      "Completed a 6-week Generative AI & Cloud Computing Virtual Internship with IBM SkillBuild x BharatCares, learning Prompt Engineering, Large Language Models (LLMs), cloud computing fundamentals, and AI application development.",
+      "Worked with Git-based version control, scalable application architecture, API integration, and collaborative software development practices across multiple internship projects."
     ],
   },
   {
-    title: "Generative AI & Cloud Computing Intern",
-    companyName: "IBM SkillBuild x BharatCares",
-    icon: ibm,
-    iconBg: "#E6DEDD",
-    date: "6 Weeks Virtual Internship",
+    title: "Full Stack MERN Developer",
+    companyName: "AK Store (Personal Project)",
+    icon: akstore, 
+    iconBg: "#383E56",
+    date: "2026",
     points: [
-      "Learned Generative AI, Prompt Engineering and Large Language Models (LLMs).",
-      "Built AI-powered applications integrating modern GenAI tools and APIs.",
-      "Explored cloud computing fundamentals, scalable architectures and deployment workflows.",
-      "Collaborated with a virtual team to complete real-world AI and cloud-based projects."
+      "Designed and developed a production-ready E-Commerce platform using the MERN Stack with a modern and responsive user interface.",
+      "Implemented secure JWT authentication, role-based admin dashboard, product management, shopping cart, order management, and RESTful APIs.",
+      "Integrated online payment gateways, Cloudinary image storage, and MongoDB database while following industry-standard backend architecture.",
+      "Optimized application performance, implemented protected routes, and deployed the full-stack application for real-world usage using modern deployment platforms."
     ],
   },
   {
-    title: "Full Stack Developer Intern",
-    companyName: "Intern Infobyte",
-    icon: interninfobyte,
+    title: "Software Developer (Core Java)",
+    companyName: "Tech Internship Skill Portal (Core Java Project)",
+    icon: java, 
     iconBg: "#E6DEDD",
-    date: "May 2026 - July 2026",
+    date: "2026",
     points: [
-      "Worked on full-stack web application development using the MERN Stack.",
-      "Designed responsive user interfaces and developed secure backend REST APIs.",
-      "Implemented CRUD operations, authentication and database integration using MongoDB.",
-      "Improved application performance while following clean code and Git-based version control."
+      "Developed a console-based Internship & Skill Portal using Core Java, applying Object-Oriented Programming (OOP) principles including Encapsulation, Inheritance, Polymorphism, and Abstraction.",
+      "Implemented user authentication, internship management, skill tracking, and role-based functionalities using Java collections, methods, and control flow.",
+      "Designed a modular application architecture with reusable classes, packages, and exception handling to improve maintainability and code quality.",
+      "Strengthened Core Java concepts such as classes, objects, constructors, interfaces, file handling, collections framework, and object-oriented design through a real-world project."
     ],
-  },
+  }
 ];
 
 const projects: TProject[] = [

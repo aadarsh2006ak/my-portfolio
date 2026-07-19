@@ -13,12 +13,15 @@ import git from "./tech/git.png";
 import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
 import mongodb from "./tech/mongodb.png";
+import java1 from "./tech/java.png";
 import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
 import tailwind from "./tech/tailwind.png";
 
 import html5 from "./company/html5.png";
 import uptoskills from "./company/uptoskills.png";
+import akstore from "./company/akstore.png";
+import java from "./company/java.png";
 import ibm from "./company/ibm.png";
 import interninfobyte from "./company/interninfobyte.png";
 
@@ -36,6 +39,8 @@ export {
   medicalReportAnalyzer,  
   html5,
   uptoskills,
+  akstore,
+  java,
   ibm,
   interninfobyte,
   logo,
@@ -52,6 +57,7 @@ export {
   html,
   javascript,
   mongodb,
+  java1,
   nodejs,
   reactjs,
   tailwind,
