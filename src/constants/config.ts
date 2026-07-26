@@ -66,7 +66,7 @@ export const config: TConfig = {
     about: {
       p: "Introduction",
       h2: "Overview.",
-      content: `Hi, I’m Aadarsh Kumar, a passionate 2nd-year B.Tech Computer Science and Engineering student focused on building modern and impactful software solutions. I enjoy developing interactive web applications and exploring technologies such as Java, React.js, MySQL, Firebase, and modern frontend frameworks. My projects include real-world applications featuring dynamic user experiences, real-time functionality, and scalable design. Alongside development, I continuously strengthen my Data Structures & Algorithms skills and explore emerging technologies to expand my technical expertise. I’m currently seeking internship opportunities to apply my skills, solve meaningful problems, and grow as a software engineer.`,
+      content: `Hi, I’m Aadarsh Kumar, a passionate 3rd-year B.Tech Computer Science and Engineering student focused on building modern and impactful software solutions. I enjoy developing interactive web applications and exploring technologies such as Java, React.js, MySQL, Firebase, and modern frontend frameworks. My projects include real-world applications featuring dynamic user experiences, real-time functionality, and scalable design. Alongside development, I continuously strengthen my Data Structures & Algorithms skills and explore emerging technologies to expand my technical expertise. I’m currently seeking internship opportunities to apply my skills, solve meaningful problems, and grow as a software engineer.`,
     },
     experience: {
       p: "What I have done so far",

@@ -67,7 +67,7 @@ const services: TService[] = [
     icon: mobile,
   },
   {
-    title: "Software Developer",
+    title: "Software Engineer",
     icon: creator,
   },
 ];
@@ -157,7 +157,7 @@ const experiences: TExperience[] = [
     ],
   },
   {
-    title: "Software Developer (Core Java)",
+    title: "Software Engineer",
     companyName: "Tech Internship Skill Portal (Core Java Project)",
     icon: java, 
     iconBg: "#E6DEDD",
@@ -173,7 +173,7 @@ const experiences: TExperience[] = [
 
 const projects: TProject[] = [
   {
-    name: "AI Placement Hub",
+    name: "Placement Hub",
     description:
       "A complete AI-powered placement preparation platform where students can practice coding, generate resumes, prepare for interviews, receive AI career guidance and manage placement activities through a secure MERN-based dashboard.",
 
@@ -237,7 +237,7 @@ const projects: TProject[] = [
     sourceCodeLink: "https://github.com/aadarsh2006ak/Ai-chatBot.git",
   },
   {
-    name: "AI Avatar Generator",
+    name: "Avatar Generator",
     description:
       "An AI application that generates high-quality custom avatars from user prompts with image generation APIs, authentication and cloud image storage.",
 
@@ -269,7 +269,7 @@ const projects: TProject[] = [
     sourceCodeLink: "https://github.com/aadarsh2006ak/Avatar-Generator.git",
   },
   {
-    name: "AI Medical Report Analyzer",
+    name: "Medical Report Analyzer",
     description:
       "A smart healthcare application that analyzes uploaded medical reports using Generative AI and provides simplified health summaries, risk indicators and recommendations.",
 
