@@ -14,6 +14,7 @@ import {
   chatbot,
   avatarGenerator,
   medicalReportAnalyzer,
+  techInternshipPortal,
   html5,
   uptoskills,
   akstore,
@@ -40,12 +41,12 @@ export const navLinks: TNavLink[] = [
     title: "About",
   },
   {
-    id: "projects",
-    title: "Projects"
+    id: "work",
+    title: "Work Experience",
   },
   {
-    id: "work",
-    title: "Work",
+    id: "projects",
+    title: "Projects",
   },
   {
     id: "contact",
@@ -203,6 +204,7 @@ const projects: TProject[] = [
     image: placementhub,
 
     sourceCodeLink: "https://github.com/aadarsh2006ak/Ai-placementHub.git",
+    liveDemoLink: "",
   },
   {
     name: "AI Powered Custom Chatbot",
@@ -235,6 +237,7 @@ const projects: TProject[] = [
     image: chatbot,
 
     sourceCodeLink: "https://github.com/aadarsh2006ak/Ai-chatBot.git",
+    liveDemoLink: "",
   },
   {
     name: "Avatar Generator",
@@ -267,6 +270,7 @@ const projects: TProject[] = [
     image: avatarGenerator,
 
     sourceCodeLink: "https://github.com/aadarsh2006ak/Avatar-Generator.git",
+    liveDemoLink: "",
   },
   {
     name: "Medical Report Analyzer",
@@ -299,6 +303,36 @@ const projects: TProject[] = [
     image: medicalReportAnalyzer,
 
     sourceCodeLink: "https://github.com/aadarsh2006ak/Medical-report-analyzer.git",
+    liveDemoLink: "",
+  },
+  {
+    name: "Tech Internship & Skill Portal",
+    description:
+      "A comprehensive management system built using Core Java and OOP principles, featuring user authentication, role-based internship management, skill tracking and modular architecture.",
+
+    tags: [
+      {
+        name: "Java",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "OOP",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Collections",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "File Handling",
+        color: "blue-text-gradient",
+      },
+    ],
+
+    image: techInternshipPortal,
+
+    sourceCodeLink: "https://github.com/aadarsh2006ak/Tech-internship-skill-portal",
+    liveDemoLink: "",
   },
 ];
 

@@ -11,6 +11,7 @@ import {
   Tech,
   Projects,
   StarsCanvas,
+  Chatbot,
 } from "./components";
 
 const App: React.FC = () => {
@@ -32,10 +33,10 @@ const App: React.FC = () => {
         <Tech />
         <Projects />
         <div className="relative z-0">
-
           <Contact />
           <StarsCanvas />
         </div>
+        <Chatbot />
       </div>
     </BrowserRouter>
   );

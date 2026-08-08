@@ -34,6 +34,12 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement> | undefined) => {
     if (e === undefined) return;
     e.preventDefault();
+
+    if (!form.name?.trim() || !form.email?.trim() || !form.message?.trim()) {
+      alert("Please fill in all fields before sending.");
+      return;
+    }
+
     setLoading(true);
 
     emailjs.send(
@@ -94,6 +100,7 @@ const Contact = () => {
                   value={form[`${input}`]}
                   onChange={handleChange}
                   placeholder={placeholder}
+                  required
                   className="bg-tertiary placeholder:text-secondary rounded-lg border-none px-6 py-4 font-medium text-white outline-none"
                   {...(input === "message" && { rows: 7 })}
                 />

@@ -29,6 +29,7 @@ import placementhub from "./projects/placementhub.png";
 import chatbot from "./projects/chatbot.png";
 import avatarGenerator from "./projects/avatarGenerator.png";
 import medicalReportAnalyzer from "./projects/medicalReportAnalyzer.png";
+import techInternshipPortal from "./projects/techInternshipPortal.png";
 import leetcode from "./tech/leetcode.png"
 
 export {
@@ -36,7 +37,8 @@ export {
   placementhub,
   chatbot,
   avatarGenerator,
-  medicalReportAnalyzer,  
+  medicalReportAnalyzer,
+  techInternshipPortal,  
   html5,
   uptoskills,
   akstore,

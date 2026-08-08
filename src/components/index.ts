@@ -14,6 +14,7 @@ import Works from "./sections/Works";
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 import CanvasLoader from "./layout/Loader";
+import Chatbot from "./chatbot/Chatbot";
 
 export {
   Hero,
@@ -24,6 +25,7 @@ export {
   Works,
   Projects,
   Contact,
+  Chatbot,
   CanvasLoader,
   EarthCanvas,
   BallCanvas,
