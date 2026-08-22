@@ -387,7 +387,7 @@ export const Chatbot: React.FC = () => {
   ======================================================= */
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end">
 
       {/* =================================================
           CHAT WINDOW
@@ -415,7 +415,7 @@ export const Chatbot: React.FC = () => {
               duration: 0.25,
               ease: "easeOut",
             }}
-            className="mb-4 flex flex-col h-[520px] w-[90vw] max-w-[390px] rounded-2xl bg-[#100d25]/95 backdrop-blur-xl border border-purple-500/30 shadow-2xl shadow-purple-900/40 overflow-hidden"
+            className="mb-4 flex flex-col h-[520px] w-[calc(100vw-2rem)] sm:w-[360px] md:w-[390px] rounded-2xl bg-[#100d25]/95 backdrop-blur-xl border border-purple-500/30 shadow-2xl shadow-purple-900/40 overflow-hidden"
           >
 
             {/* =================================================
@@ -695,7 +695,7 @@ export const Chatbot: React.FC = () => {
                     !input.trim() ||
                     isLoading
                   }
-                  className="bg-gradient-to-r from-[#915eff] to-[#703bf7] hover:from-[#804bee] hover:to-[#602ce6] disabled:opacity-40 text-white p-2 rounded-lg transition-all cursor-pointer disabled:cursor-not-allowed shadow-sm"
+                  className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gradient-to-r from-[#915eff] to-[#703bf7] hover:from-[#804bee] hover:to-[#602ce6] disabled:opacity-40 text-white rounded-lg transition-all cursor-pointer disabled:cursor-not-allowed shadow-sm"
                   title="Send message"
                 >
 
