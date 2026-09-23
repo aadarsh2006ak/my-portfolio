@@ -10,11 +10,11 @@ import Navbar from "./layout/Navbar";
 import About from "./sections/About";
 import Tech from "./sections/Tech";
 import Experience from "./sections/Experience";
-import Works from "./sections/Works";
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 import CanvasLoader from "./layout/Loader";
 import Chatbot from "./chatbot/Chatbot";
+import Footer from "./layout/Footer";
 
 export {
   Hero,
@@ -22,10 +22,10 @@ export {
   About,
   Tech,
   Experience,
-  Works,
   Projects,
   Contact,
   Chatbot,
+  Footer,
   CanvasLoader,
   EarthCanvas,
   BallCanvas,

@@ -83,3 +83,12 @@ export const config: TConfig = {
     },
   },
 };
+
+export const socialLinks = {
+  github: "https://github.com/aadarsh2006ak",
+  linkedin: "https://www.linkedin.com/in/aadarsh-kumar-646361335",
+  instagram: "https://www.instagram.com/aadarsh_2006_ak",
+  leetcode: "https://leetcode.com/u/aadarsh_2026/",
+  email: "mailto:Kumar869645@gmail.com",
+};
+

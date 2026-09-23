@@ -25,19 +25,21 @@ import java from "./company/java.png";
 import ibm from "./company/ibm.png";
 import interninfobyte from "./company/interninfobyte.png";
 
+import enterpriseAssetMgmt from "./projects/enterpriseAssetMgmt.png";
+import jiraLite from "./projects/jiraLite.png";
 import placementhub from "./projects/placementhub.png";
 import chatbot from "./projects/chatbot.png";
-import avatarGenerator from "./projects/avatarGenerator.png";
-import medicalReportAnalyzer from "./projects/medicalReportAnalyzer.png";
+import smartDocAnalyzer from "./projects/smartDocAnalyzer.png";
 import techInternshipPortal from "./projects/techInternshipPortal.png";
 import leetcode from "./tech/leetcode.png"
 
 export {
+  enterpriseAssetMgmt,
+  jiraLite,
+  smartDocAnalyzer,
   leetcode,
   placementhub,
   chatbot,
-  avatarGenerator,
-  medicalReportAnalyzer,
   techInternshipPortal,  
   html5,
   uptoskills,

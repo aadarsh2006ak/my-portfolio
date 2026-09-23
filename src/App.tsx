@@ -12,6 +12,7 @@ import {
   Projects,
   StarsCanvas,
   Chatbot,
+  Footer,
 } from "./components";
 
 const App: React.FC = () => {
@@ -24,6 +25,7 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <div className="bg-primary relative z-0">
+        <StarsCanvas />
         <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
           <Navbar />
           <Hero />
@@ -34,8 +36,8 @@ const App: React.FC = () => {
         <Projects />
         <div className="relative z-0">
           <Contact />
-          <StarsCanvas />
         </div>
+        <Footer />
         <Chatbot />
       </div>
     </BrowserRouter>

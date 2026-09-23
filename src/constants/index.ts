@@ -10,11 +10,9 @@ import type {
 declare module "../assets";
 
 import {
-  placementhub,
-  chatbot,
-  avatarGenerator,
-  medicalReportAnalyzer,
-  techInternshipPortal,
+  enterpriseAssetMgmt,
+  jiraLite,
+  smartDocAnalyzer,
   html5,
   uptoskills,
   akstore,
@@ -174,166 +172,111 @@ const experiences: TExperience[] = [
 
 const projects: TProject[] = [
   {
-    name: "Placement Hub",
+    name: "Enterprise Employee & Asset Management System (RBAC)",
     description:
-      "A complete AI-powered placement preparation platform where students can practice coding, generate resumes, prepare for interviews, receive AI career guidance and manage placement activities through a secure MERN-based dashboard.",
-
+      "A production-grade, crash-resilient Enterprise Asset & Workforce Management Platform built with Spring Boot 3, React 18, PostgreSQL 15, Redis 7, Distributed Rate Limiting, Optimistic Concurrency Control (@Version), and AWS Cloud Observability (Prometheus & Grafana).",
     tags: [
       {
-        name: "React",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Node.js",
+        name: "Spring Boot 3",
         color: "green-text-gradient",
       },
       {
-        name: "MongoDB",
+        name: "React 18",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "PostgreSQL 15",
         color: "pink-text-gradient",
       },
       {
-        name: "Express",
+        name: "Redis 7",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "AWS & Docker",
         color: "blue-text-gradient",
       },
       {
-        name: "Gemini API",
+        name: "Grafana & Prometheus",
         color: "green-text-gradient",
       },
     ],
-
-    image: placementhub,
-
-    sourceCodeLink: "https://github.com/aadarsh2006ak/Ai-placementHub.git",
-    liveDemoLink: "",
+    image: enterpriseAssetMgmt,
+    sourceCodeLink:
+      "https://github.com/aadarsh2006ak/Enterprise-Employee-Asset-Mgmt.-Sys.-RBAC-.git",
+    liveDemoLink: "http://65.1.91.228/login",
   },
   {
-    name: "AI Powered Custom Chatbot",
+    name: "Jira-Lite — Real-Time Collaborative Kanban Workspace",
     description:
-      "An intelligent chatbot capable of answering user queries using advanced LLM APIs with conversation history, secure authentication and responsive UI.",
-
+      "A high-concurrency, enterprise-grade real-time collaborative Kanban project management platform engineered with MERN stack, Socket.io, Redis Pub/Sub, O(1) Fractional Indexing, 0ms Optimistic UI updates, and Optimistic Concurrency Control (OCC).",
     tags: [
       {
-        name: "React",
+        name: "MERN Stack",
         color: "blue-text-gradient",
       },
       {
-        name: "Node.js",
-        color: "green-text-gradient",
-      },
-      {
-        name: "MongoDB",
+        name: "Socket.io",
         color: "pink-text-gradient",
       },
       {
-        name: "Gemini API",
+        name: "Redis Pub/Sub",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "React 18 & Redux",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Node.js & Express",
         color: "green-text-gradient",
       },
       {
-        name: "Tailwind",
-        color: "blue-text-gradient",
+        name: "MongoDB Atlas",
+        color: "green-text-gradient",
       },
     ],
-
-    image: chatbot,
-
-    sourceCodeLink: "https://github.com/aadarsh2006ak/Ai-chatBot.git",
-    liveDemoLink: "",
+    image: jiraLite,
+    sourceCodeLink:
+      "https://github.com/aadarsh2006ak/Real-Time-Collaborative-Workspace-Kanban-Tracker-Jira-Lite-.git",
+    liveDemoLink: "https://jira-lite-client.onrender.com",
   },
   {
-    name: "Avatar Generator",
+    name: "AI-Powered Smart Document & Report Analyzer",
     description:
-      "An AI application that generates high-quality custom avatars from user prompts with image generation APIs, authentication and cloud image storage.",
-
+      "An enterprise-grade, asynchronous document intelligence & RAG platform featuring multi-format ingestion (PDF/DOCX/Images/XLSX), BullMQ & Redis distributed worker pipelines, interactive citation-backed RAG chat, SHA-256 deduplication cache (<15ms), and 6 specialized domain reasoning studios.",
     tags: [
       {
-        name: "React",
+        name: "React 18 & Vite",
         color: "blue-text-gradient",
       },
       {
-        name: "Express",
+        name: "Node.js & Express",
         color: "green-text-gradient",
       },
       {
-        name: "MongoDB",
+        name: "MongoDB Atlas",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Redis & BullMQ",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "Google Gemini & Groq",
         color: "pink-text-gradient",
       },
       {
-        name: "Cloudinary",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "OpenAI API",
-        color: "green-text-gradient",
-      },
-    ],
-
-    image: avatarGenerator,
-
-    sourceCodeLink: "https://github.com/aadarsh2006ak/Avatar-Generator.git",
-    liveDemoLink: "",
-  },
-  {
-    name: "Medical Report Analyzer",
-    description:
-      "A smart healthcare application that analyzes uploaded medical reports using Generative AI and provides simplified health summaries, risk indicators and recommendations.",
-
-    tags: [
-      {
-        name: "React",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Node.js",
-        color: "green-text-gradient",
-      },
-      {
-        name: "MongoDB",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "Gemini API",
-        color: "green-text-gradient",
-      },
-      {
-        name: "OCR",
+        name: "RAG & Citations",
         color: "blue-text-gradient",
       },
     ],
-
-    image: medicalReportAnalyzer,
-
-    sourceCodeLink: "https://github.com/aadarsh2006ak/Medical-report-analyzer.git",
-    liveDemoLink: "",
+    image: smartDocAnalyzer,
+    sourceCodeLink:
+      "https://github.com/aadarsh2006ak/Ai-Powered-Smart-Documentation-Report-Analyzer.git",
+    liveDemoLink: "https://smartdoc-analyzer-ui.onrender.com",
   },
-  {
-    name: "Tech Internship & Skill Portal",
-    description:
-      "A comprehensive management system built using Core Java and OOP principles, featuring user authentication, role-based internship management, skill tracking and modular architecture.",
-
-    tags: [
-      {
-        name: "Java",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "OOP",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Collections",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "File Handling",
-        color: "blue-text-gradient",
-      },
-    ],
-
-    image: techInternshipPortal,
-
-    sourceCodeLink: "https://github.com/aadarsh2006ak/Tech-internship-skill-portal",
-    liveDemoLink: "",
-  },
+  // Future projects will be appended here in order:
 ];
 
 export { services, technologies, experiences, projects };
