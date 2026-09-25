@@ -423,19 +423,17 @@ export const Chatbot: React.FC = () => {
   ======================================================= */
 
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end">
-
+    <div className="fixed bottom-3 right-3 left-3 sm:left-auto sm:right-6 sm:bottom-6 z-50 flex flex-col items-end pointer-events-none">
       {/* =================================================
           CHAT WINDOW
       ================================================= */}
-
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{
               opacity: 0,
-              y: 30,
-              scale: 0.9,
+              y: 20,
+              scale: 0.95,
             }}
             animate={{
               opacity: 1,
@@ -444,93 +442,58 @@ export const Chatbot: React.FC = () => {
             }}
             exit={{
               opacity: 0,
-              y: 30,
-              scale: 0.9,
+              y: 20,
+              scale: 0.95,
             }}
             transition={{
-              duration: 0.25,
+              duration: 0.2,
               ease: "easeOut",
             }}
-            className="mb-3 sm:mb-4 flex flex-col h-[min(520px,calc(100dvh-6rem))] max-h-[540px] w-[calc(100vw-2rem)] sm:w-[360px] md:w-[390px] rounded-2xl bg-[#100d25]/95 backdrop-blur-xl border border-purple-500/30 shadow-2xl shadow-purple-900/40 overflow-hidden"
+            className="pointer-events-auto flex flex-col h-[min(500px,calc(100dvh-2rem))] max-h-[540px] w-full sm:w-[370px] md:w-[390px] rounded-2xl bg-[#100d25]/95 backdrop-blur-xl border border-purple-500/30 shadow-2xl shadow-purple-900/40 overflow-hidden"
           >
-
             {/* =================================================
                 HEADER
             ================================================= */}
-
-            <div className="flex items-center justify-between px-5 py-4 border-b border-white/10 bg-gradient-to-r from-[#1d1836] to-[#151030]">
-
-              <div className="flex items-center gap-3">
-
+            <div className="flex items-center justify-between px-4 py-3.5 border-b border-white/10 bg-gradient-to-r from-[#1d1836] to-[#151030] shrink-0">
+              <div className="flex items-center gap-2.5">
                 {/* ROBOT ICON */}
-
                 <div className="relative">
-
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#915eff] to-[#00cea8] flex items-center justify-center shadow-md">
-
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#915eff] to-[#00cea8] flex items-center justify-center shadow-md">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth={1.8}
                       stroke="currentColor"
-                      className="w-5 h-5 text-white"
+                      className="w-4 h-4 text-white"
                     >
-                      <rect
-                        x="4"
-                        y="7"
-                        width="16"
-                        height="12"
-                        rx="3"
-                      />
-
-                      <path
-                        strokeLinecap="round"
-                        d="M9 11h.01M15 11h.01"
-                      />
-
-                      <path
-                        strokeLinecap="round"
-                        d="M9 15h6"
-                      />
-
-                      <path
-                        strokeLinecap="round"
-                        d="M12 3v4"
-                      />
+                      <rect x="4" y="7" width="16" height="12" rx="3" />
+                      <path strokeLinecap="round" d="M9 11h.01M15 11h.01" />
+                      <path strokeLinecap="round" d="M9 15h6" />
+                      <path strokeLinecap="round" d="M12 3v4" />
                     </svg>
-
                   </div>
-
-                  <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-green-500 ring-2 ring-[#100d25]" />
-
+                  <span className="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-green-500 ring-2 ring-[#100d25]" />
                 </div>
 
                 <div>
-
-                  <h4 className="text-[15px] font-bold text-white leading-none">
+                  <h4 className="text-[14px] font-bold text-white leading-tight">
                     Aadarsh's AI Assistant
                   </h4>
-
-                  <span className="text-[11px] text-purple-300/80 font-medium">
+                  <span className="text-[10.5px] text-purple-300/80 font-medium">
                     Powered by Gemini AI
                   </span>
-
                 </div>
-
               </div>
 
               <div className="flex items-center gap-1 text-secondary">
-
                 {/* CLEAR */}
-
                 <button
                   type="button"
                   onClick={handleClearChat}
                   title="Clear chat"
                   className="p-1.5 rounded-lg hover:bg-white/10 hover:text-white transition-colors cursor-pointer"
                 >
-
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -539,28 +502,21 @@ export const Chatbot: React.FC = () => {
                     stroke="currentColor"
                     className="w-4 h-4"
                   >
-
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
                     />
-
                   </svg>
-
                 </button>
 
                 {/* CLOSE */}
-
                 <button
                   type="button"
-                  onClick={() =>
-                    setIsOpen(false)
-                  }
+                  onClick={() => setIsOpen(false)}
                   title="Close chat"
                   className="p-1.5 rounded-lg hover:bg-white/10 hover:text-white transition-colors cursor-pointer"
                 >
-
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -569,295 +525,172 @@ export const Chatbot: React.FC = () => {
                     stroke="currentColor"
                     className="w-5 h-5"
                   >
-
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       d="M6 18 18 6M6 6l12 12"
                     />
-
                   </svg>
-
                 </button>
-
               </div>
-
             </div>
 
             {/* =================================================
-                MESSAGES
+                MESSAGES (min-h-0 prevents flex overflow)
             ================================================= */}
-
-            <div className="flex-1 overflow-y-auto p-4 space-y-3.5 scroll-smooth">
-
-              {messages.map(
-                (message, index) => (
-
+            <div className="flex-1 min-h-0 overflow-y-auto p-3.5 space-y-3 scroll-smooth">
+              {messages.map((message, index) => (
+                <div
+                  key={index}
+                  className={`flex flex-col ${
+                    message.role === "user" ? "items-end" : "items-start"
+                  }`}
+                >
                   <div
-                    key={index}
-                    className={`flex flex-col ${
+                    className={`max-w-[88%] rounded-2xl px-3.5 py-2.5 text-[13px] leading-relaxed break-words shadow-md ${
                       message.role === "user"
-                        ? "items-end"
-                        : "items-start"
+                        ? "bg-gradient-to-r from-[#915eff] to-[#703bf7] text-white rounded-br-none"
+                        : "bg-[#1d1836] text-gray-200 border border-white/10 rounded-bl-none"
                     }`}
                   >
-
-                    <div
-                      className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-[13.5px] leading-relaxed break-words shadow-md ${
-                        message.role === "user"
-                          ? "bg-gradient-to-r from-[#915eff] to-[#703bf7] text-white rounded-br-none"
-                          : "bg-[#1d1836] text-gray-200 border border-white/10 rounded-bl-none"
-                      }`}
-                    >
-
-                      <p className="whitespace-pre-wrap">
-                        {message.text}
-                      </p>
-
-                    </div>
-
+                    <p className="whitespace-pre-wrap">{message.text}</p>
                   </div>
-
-                )
-              )}
+                </div>
+              ))}
 
               {/* LOADING */}
-
               {isLoading && (
                 <div className="flex items-start">
-
-                  <div className="bg-[#1d1836] border border-white/10 rounded-2xl rounded-bl-none px-4 py-3 shadow-md flex items-center gap-1.5">
-
+                  <div className="bg-[#1d1836] border border-white/10 rounded-2xl rounded-bl-none px-3.5 py-2.5 shadow-md flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-[#915eff] animate-bounce" />
-
                     <span
                       className="w-2 h-2 rounded-full bg-[#915eff] animate-bounce"
-                      style={{
-                        animationDelay:
-                          "0.15s",
-                      }}
+                      style={{ animationDelay: "0.15s" }}
                     />
-
                     <span
                       className="w-2 h-2 rounded-full bg-[#915eff] animate-bounce"
-                      style={{
-                        animationDelay:
-                          "0.3s",
-                      }}
+                      style={{ animationDelay: "0.3s" }}
                     />
-
                   </div>
-
                 </div>
               )}
 
-              {/* =================================================
-                  SUGGESTIONS
-              ================================================= */}
-
-              {messages.length === 1 &&
-                !isLoading && (
-
-                  <div className="pt-2 flex flex-col gap-1.5">
-
-                    <p className="text-[11px] font-medium text-secondary uppercase tracking-wider px-1">
-                      Suggested Questions
-                    </p>
-
-                    <div className="flex flex-wrap gap-1.5">
-
-                      {SUGGESTIONS.map(
-                        (
-                          suggestion,
-                          index
-                        ) => (
-
-                          <button
-                            key={index}
-                            type="button"
-                            onClick={() =>
-                              handleSendMessage(
-                                suggestion
-                              )
-                            }
-                            className="text-left text-[12px] bg-white/5 hover:bg-purple-600/30 text-gray-300 hover:text-white border border-white/10 hover:border-purple-500/40 rounded-xl px-3 py-1.5 transition-all duration-200 cursor-pointer"
-                          >
-                            {suggestion}
-                          </button>
-
-                        )
-                      )}
-
-                    </div>
-
+              {/* SUGGESTIONS */}
+              {messages.length === 1 && !isLoading && (
+                <div className="pt-2 flex flex-col gap-1.5">
+                  <p className="text-[10px] font-medium text-secondary uppercase tracking-wider px-1">
+                    Suggested Questions
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {SUGGESTIONS.map((suggestion, index) => (
+                      <button
+                        key={index}
+                        type="button"
+                        onClick={() => handleSendMessage(suggestion)}
+                        className="text-left text-[11.5px] bg-white/5 hover:bg-purple-600/30 text-gray-300 hover:text-white border border-white/10 hover:border-purple-500/40 rounded-xl px-2.5 py-1.5 transition-all duration-200 cursor-pointer"
+                      >
+                        {suggestion}
+                      </button>
+                    ))}
                   </div>
-
-                )}
+                </div>
+              )}
 
               <div ref={messagesEndRef} />
-
             </div>
 
             {/* =================================================
-                INPUT
+                INPUT (shrink-0 guarantees always visible at bottom)
             ================================================= */}
-
-            <div className="p-3 border-t border-white/10 bg-[#151030]/80">
-
+            <div className="p-2.5 sm:p-3 border-t border-white/10 bg-[#151030] shrink-0">
               <form
                 onSubmit={(event) => {
                   event.preventDefault();
                   handleSendMessage();
                 }}
-                className="flex items-center gap-2 bg-[#1d1836] rounded-xl px-3 py-1.5 border border-white/10 focus-within:border-purple-500 transition-colors"
+                className="flex items-center gap-2 bg-[#1d1836] rounded-xl px-2.5 py-1.5 border border-white/10 focus-within:border-purple-500 transition-colors"
               >
-
                 <input
                   ref={inputRef}
                   type="text"
                   value={input}
-                  onChange={(event) =>
-                    setInput(event.target.value)
-                  }
+                  onChange={(event) => setInput(event.target.value)}
                   onKeyDown={handleKeyDown}
                   placeholder="Ask me anything..."
                   disabled={isLoading}
-                  className="flex-1 bg-transparent text-[16px] sm:text-[13.5px] text-white placeholder:text-secondary outline-none disabled:opacity-50"
+                  className="flex-1 min-w-0 bg-transparent text-[14px] sm:text-[13.5px] text-white placeholder:text-secondary outline-none disabled:opacity-50"
                 />
 
                 <button
                   type="submit"
-                  disabled={
-                    !input.trim() ||
-                    isLoading
-                  }
-                  className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gradient-to-r from-[#915eff] to-[#703bf7] hover:from-[#804bee] hover:to-[#602ce6] disabled:opacity-40 text-white rounded-lg transition-all cursor-pointer disabled:cursor-not-allowed shadow-sm"
+                  disabled={!input.trim() || isLoading}
+                  className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gradient-to-r from-[#915eff] to-[#703bf7] hover:from-[#804bee] hover:to-[#602ce6] disabled:opacity-40 text-white rounded-lg transition-all cursor-pointer disabled:cursor-not-allowed shadow-md active:scale-95"
                   title="Send message"
+                  aria-label="Send message"
                 >
-
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={2}
-                    stroke="currentColor"
-                    className="w-4 h-4"
-                  >
-
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
-                    />
-
-                  </svg>
-
+                  {isLoading ? (
+                    <span className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={2.2}
+                      stroke="currentColor"
+                      className="w-4 h-4 text-white"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
+                      />
+                    </svg>
+                  )}
                 </button>
-
               </form>
-
             </div>
-
           </motion.div>
         )}
       </AnimatePresence>
 
       {/* =====================================================
-          FLOATING CHAT BUTTON
+          FLOATING CHAT BUTTON (Hidden when chat is open on mobile to save space)
       ===================================================== */}
-
-      <motion.button
-        type="button"
-        whileHover={{
-          scale: 1.08,
-        }}
-        whileTap={{
-          scale: 0.95,
-        }}
-        onClick={() =>
-          setIsOpen(!isOpen)
-        }
-        className="relative group bg-gradient-to-r from-[#915eff] via-[#703bf7] to-[#00cea8] p-[2px] rounded-full shadow-lg shadow-purple-600/40 cursor-pointer"
-        aria-label="Toggle AI Chat"
-      >
-
-        <div className="bg-[#100d25] hover:bg-transparent rounded-full p-3.5 flex items-center justify-center transition-colors duration-300">
-
-          {isOpen ? (
-
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2.2}
-              stroke="currentColor"
-              className="w-6 h-6 text-white"
-            >
-
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18 18 6M6 6l12 12"
-              />
-
-            </svg>
-
-          ) : (
-
-            /* VALID ROBOT ICON */
-
+      {!isOpen && (
+        <motion.button
+          type="button"
+          whileHover={{
+            scale: 1.08,
+          }}
+          whileTap={{
+            scale: 0.95,
+          }}
+          onClick={() => setIsOpen(true)}
+          className="pointer-events-auto relative group bg-gradient-to-r from-[#915eff] via-[#703bf7] to-[#00cea8] p-[2px] rounded-full shadow-lg shadow-purple-600/40 cursor-pointer"
+          aria-label="Toggle AI Chat"
+        >
+          <div className="bg-[#100d25] hover:bg-transparent rounded-full p-3 sm:p-3.5 flex items-center justify-center transition-colors duration-300">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.8}
               stroke="currentColor"
-              className="w-6 h-6 text-white"
+              className="w-5 h-5 sm:w-6 sm:h-6 text-white"
             >
-
-              <rect
-                x="4"
-                y="7"
-                width="16"
-                height="12"
-                rx="3"
-              />
-
-              <path
-                strokeLinecap="round"
-                d="M9 11h.01M15 11h.01"
-              />
-
-              <path
-                strokeLinecap="round"
-                d="M9 15h6"
-              />
-
-              <path
-                strokeLinecap="round"
-                d="M12 3v4"
-              />
-
+              <rect x="4" y="7" width="16" height="12" rx="3" />
+              <path strokeLinecap="round" d="M9 11h.01M15 11h.01" />
+              <path strokeLinecap="round" d="M9 15h6" />
+              <path strokeLinecap="round" d="M12 3v4" />
             </svg>
+          </div>
 
-          )}
-
-        </div>
-
-        {!isOpen && (
-
-          <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
-
+          <span className="absolute -top-1 -right-1 flex h-3 w-3 sm:h-3.5 sm:w-3.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-
-            <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500 ring-2 ring-[#100d25]" />
-
+            <span className="relative inline-flex rounded-full h-3 w-3 sm:h-3.5 sm:w-3.5 bg-emerald-500 ring-2 ring-[#100d25]" />
           </span>
-
-        )}
-
-      </motion.button>
-
+        </motion.button>
+      )}
     </div>
   );
 };
