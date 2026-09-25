@@ -204,7 +204,6 @@ const Projects = () => {
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isDragging || !scrollRef.current) return;
-    e.preventDefault();
     const x = e.pageX - scrollRef.current.offsetLeft;
     const walk = (x - startX) * 1.1;
     let newPos = scrollLeftPos - walk;
@@ -229,40 +228,18 @@ const Projects = () => {
     }, 800);
   };
 
-  // Touch Handlers for Mobile Devices
-  const handleTouchStart = (e: React.TouchEvent) => {
-    if (!scrollRef.current) return;
-    setIsDragging(true);
+  // Touch Handlers for Mobile Devices (Native pan-y support)
+  const handleTouchStart = () => {
     isPausedRef.current = true;
-    setStartX(e.touches[0].pageX - scrollRef.current.offsetLeft);
-    setScrollLeftPos(scrollRef.current.scrollLeft);
-    scrollPosRef.current = scrollRef.current.scrollLeft;
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging || !scrollRef.current) return;
-    const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 1.1;
-    let newPos = scrollLeftPos - walk;
-
-    const halfWidth = scrollRef.current.scrollWidth / 2;
-    if (halfWidth > 0) {
-      if (newPos >= halfWidth) newPos -= halfWidth;
-      else if (newPos <= 0) newPos += halfWidth;
-    }
-
-    scrollRef.current.scrollLeft = newPos;
-    scrollPosRef.current = newPos;
   };
 
   const handleTouchEnd = () => {
-    setIsDragging(false);
     if (scrollRef.current) {
       scrollPosRef.current = scrollRef.current.scrollLeft;
     }
     setTimeout(() => {
       isPausedRef.current = false;
-    }, 800);
+    }, 1200);
   };
 
   return (
@@ -297,10 +274,9 @@ const Projects = () => {
             handleMouseUpOrLeave();
           }}
           onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
           className="w-full overflow-x-auto no-scrollbar py-3 flex flex-nowrap gap-4 sm:gap-5 cursor-grab active:cursor-grabbing select-none"
-          style={{ WebkitOverflowScrolling: "touch" }}
+          style={{ WebkitOverflowScrolling: "touch", touchAction: "pan-y" }}
         >
           {repeatedProjects.map((project, index) => (
             <ProjectCard

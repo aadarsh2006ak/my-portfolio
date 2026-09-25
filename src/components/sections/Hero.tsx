@@ -215,7 +215,12 @@ const Hero = () => {
 
       {/* 3D Computer Canvas (Desktop Only) */}
       {!isMobile && (
-        <div className="absolute inset-0 top-[140px] pointer-events-auto">
+        <div
+          className="absolute inset-0 top-[140px] pointer-events-auto"
+          onWheel={(e) => {
+            window.scrollBy({ top: e.deltaY, behavior: "auto" });
+          }}
+        >
           <ComputersCanvas />
         </div>
       )}
