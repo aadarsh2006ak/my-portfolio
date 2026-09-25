@@ -88,8 +88,8 @@ const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-secondary text-sm max-w-md">
-              Full Stack Developer & Software Engineer crafting scalable,
-              interactive, and production-ready applications.
+              SDE / Java Developer & Full Stack Developer crafting scalable,
+              high-concurrency, and production-ready systems.
             </p>
           </div>
 

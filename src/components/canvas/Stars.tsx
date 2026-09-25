@@ -56,8 +56,12 @@ const NeuralStars = (props: any) => {
 
 const StarsCanvas = () => {
   return (
-    <div className="fixed inset-0 z-[-1] h-full w-full pointer-events-none">
-      <Canvas camera={{ position: [0, 0, 1] }}>
+    <div className="fixed inset-0 z-0 h-full w-full pointer-events-none overflow-hidden">
+      <Canvas
+        camera={{ position: [0, 0, 1] }}
+        gl={{ alpha: true, antialias: false, powerPreference: "high-performance" }}
+        dpr={[1, 1.5]}
+      >
         <Suspense fallback={null}>
           <NeuralStars />
         </Suspense>

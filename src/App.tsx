@@ -10,6 +10,7 @@ import {
   Navbar,
   Tech,
   Projects,
+  Education,
   StarsCanvas,
   Chatbot,
   Footer,
@@ -34,6 +35,7 @@ const App: React.FC = () => {
         <Experience />
         <Tech />
         <Projects />
+        <Education />
         <div className="relative z-0">
           <Contact />
         </div>

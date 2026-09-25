@@ -15,18 +15,18 @@ import {
   smartDocAnalyzer,
   html5,
   uptoskills,
-  akstore,
-  java,
   mobile,
   backend,
   creator,
   web,
   javascript,
-  html,
-  css,
+  typescript,
   reactjs,
   tailwind,
   nodejs,
+  springboot,
+  postgresql,
+  redis,
   mongodb,
   java1,
   git,
@@ -40,7 +40,7 @@ export const navLinks: TNavLink[] = [
   },
   {
     id: "work",
-    title: "Work Experience",
+    title: "Experience",
   },
   {
     id: "projects",
@@ -54,127 +54,133 @@ export const navLinks: TNavLink[] = [
 
 const services: TService[] = [
   {
-    title: "Dynamic Frontend Developer",
-    icon: web,
-  },
-  {
-    title: "MERN Stack Developer",
+    title: "SDE / Java Backend Developer",
     icon: backend,
   },
   {
-    title: "Full Stack Developer",
+    title: "Full Stack MERN Developer",
+    icon: web,
+  },
+  {
+    title: "Real-Time & Distributed Systems",
     icon: mobile,
   },
   {
-    title: "Software Engineer",
+    title: "AI & Cloud Integrator",
     icon: creator,
   },
 ];
 
 const technologies: TTechnology[] = [
   {
-    name: "HTML5",
-    icon: html,
+    name: "Java",
+    icon: java1,
   },
   {
-    name: "CSS3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
+    name: "Spring Boot",
+    icon: springboot,
   },
   {
     name: "React.js",
     icon: reactjs,
   },
   {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
     name: "Node.js",
     icon: nodejs,
+  },
+  {
+    name: "PostgreSQL",
+    icon: postgresql,
   },
   {
     name: "MongoDB",
     icon: mongodb,
   },
   {
-    name: "Java",
-    icon: java1,
+    name: "Redis",
+    icon: redis,
+  },
+  {
+    name: "Docker",
+    icon: docker,
+  },
+  {
+    name: "TypeScript",
+    icon: typescript,
+  },
+  {
+    name: "JavaScript",
+    icon: javascript,
   },
   {
     name: "Git",
     icon: git,
   },
   {
-    name: "Docker",
-    icon: docker,
+    name: "Tailwind CSS",
+    icon: tailwind,
   },
 ];
 
 const experiences: TExperience[] = [
   {
     title: "Frontend Development Journey",
-    companyName: "Personal Projects",
+    companyName: "Foundation & Personal Projects",
     icon: html5,
     iconBg: "#383E56",
     date: "2025",
     points: [
-      "Started web development by building responsive websites using HTML, CSS and JavaScript.",
-      "Developed Amazon Clone, Netflix Clone, Calculator and multiple UI-based projects.",
-      "Learned responsive layouts, DOM manipulation, ES6 concepts and modern frontend practices.",
-      "Built a strong foundation before moving into full-stack development."
+      "Started web engineering journey by building responsive, accessible web interfaces using HTML5, CSS3, and modern JavaScript (ES6+).",
+      "Developed UI-intensive projects including Amazon Clone, Netflix Clone, Calculator, and interactive web applications.",
+      "Mastered DOM manipulation, modern layout architectures (Flexbox/Grid), component state lifecycles, and clean code practices.",
+      "Established a strong problem-solving and algorithmic foundation before transitioning into full-stack backend systems."
     ],
   },
   {
-    title: "Full Stack Development, Generative AI & Cloud Computing Intern",
-    companyName: "UptoSkills • Intern Infobyte • IBM SkillBuild x BharatCares",
+    title: "Full Stack & Cloud Internships",
+    companyName: "UptoSkills • Intern Infobyte • IBM SkillBuild",
     icon: uptoskills,
-    iconBg: "#383E56",
-    date: "May 2026 - August 2026",
+    iconBg: "#1d1836",
+    date: "May 2026 – August 2026",
     points: [
-      "Completed Full Stack Development internships with UptoSkills and Intern Infobyte, gaining hands-on experience in building modern MERN Stack applications.",
-      "Developed production-ready web applications including an E-Commerce Platform, Weather App, Movie Recommendation System, and Todo Application using React.js, Node.js, Express.js, MongoDB, and REST APIs.",
-      "Implemented authentication, CRUD operations, payment gateway integration, admin dashboard, responsive UI, and secure backend architecture following industry-standard coding practices.",
-      "Completed a 6-week Generative AI & Cloud Computing Virtual Internship with IBM SkillBuild x BharatCares, learning Prompt Engineering, Large Language Models (LLMs), cloud computing fundamentals, and AI application development.",
-      "Worked with Git-based version control, scalable application architecture, API integration, and collaborative software development practices across multiple internship projects."
+      "Candidate Lifecycle Architecture (UptoSkills): Engineered modular recruitment & candidate lifecycle backend services in Node.js, Express.js, and PostgreSQL, integrating 15+ secured RESTful APIs with JWT auth.",
+      "Status Sync Problem Solved: Resolved a critical cross-module candidate status synchronization issue across recruitment drives, interviews, and company dashboards via centralized lifecycle state handlers.",
+      "Production Web Applications (Intern Infobyte): Developed production-ready MERN applications including E-Commerce, Weather, and Task Management systems with MongoDB data persistence and clean Git workflows.",
+      "Generative AI & Cloud Workflows (IBM): Explored Generative AI, prompt engineering, and LLM APIs to build intelligent application prototypes with scalable cloud deployment practices."
     ],
   },
   {
-    title: "Full Stack MERN Developer",
-    companyName: "AK Store (Personal Project)",
-    icon: akstore, 
+    title: "Real-Time & Distributed Systems Engineering",
+    companyName: "Jira-Lite Platform — High-Concurrency Workspace",
+    icon: nodejs,
     iconBg: "#383E56",
     date: "2026",
     points: [
-      "Designed and developed a production-ready E-Commerce platform using the MERN Stack with a modern and responsive user interface.",
-      "Implemented secure JWT authentication, role-based admin dashboard, product management, shopping cart, order management, and RESTful APIs.",
-      "Integrated online payment gateways, Cloudinary image storage, and MongoDB database while following industry-standard backend architecture.",
-      "Optimized application performance, implemented protected routes, and deployed the full-stack application for real-world usage using modern deployment platforms."
+      "Ordering Bottleneck Solved: Eliminated the O(N) database write storm during drag-and-drop Kanban task reordering (which updated 49 rows per drop) by engineering O(1) Fractional Midpoint Indexing, slashing DB writes by 98% (49 → 1) and server latency by 90.5% (~9.9 ms).",
+      "Cross-Instance Sync via Redis: Architected real-time WebSocket communication using Redis Pub/Sub to broadcast multi-room task state changes (<1 KB payloads) across scaled server instances.",
+      "Conflict Prevention & Security: Implemented Optimistic Concurrency Control (OCC) to eliminate multi-user race conditions, paired with rotating refresh cookies, HTTP-only JWTs, and 89 automated tests."
     ],
   },
   {
-    title: "Software Engineer",
-    companyName: "Tech Internship Skill Portal (Core Java Project)",
-    icon: java, 
-    iconBg: "#E6DEDD",
+    title: "Enterprise Backend & High-Concurrency Systems",
+    companyName: "Enterprise Asset Management Platform — Java & Spring Boot",
+    icon: springboot,
+    iconBg: "#1d1836",
     date: "2026",
     points: [
-      "Developed a console-based Internship & Skill Portal using Core Java, applying Object-Oriented Programming (OOP) principles including Encapsulation, Inheritance, Polymorphism, and Abstraction.",
-      "Implemented user authentication, internship management, skill tracking, and role-based functionalities using Java collections, methods, and control flow.",
-      "Designed a modular application architecture with reusable classes, packages, and exception handling to improve maintainability and code quality.",
-      "Strengthened Core Java concepts such as classes, objects, constructors, interfaces, file handling, collections framework, and object-oriented design through a real-world project."
+      "Race Condition & Overbooking Solved: Eliminated phantom double-bookings and data corruption during simultaneous asset reservations by implementing Optimistic Concurrency Control with JPA @Version locking.",
+      "Distributed Rate Limiting & Crash Resilience: Integrated Redis Token Bucket Rate Limiting to prevent API abuse during traffic surges, maintaining zero degraded endpoints.",
+      "High-Concurrency Load Testing: Validated enterprise resilience with Apache JMeter, sustaining 51,000 requests at 263.92 req/s with 0% errors (21.40 ms avg latency, 0.995 APDEX).",
+      "Cloud Observability: Deployed Prometheus and Grafana dashboards for real-time JVM metrics, DB connection pool health, and latency monitoring in production."
     ],
-  }
+  },
 ];
 
 const projects: TProject[] = [
   {
-    name: "Enterprise Employee & Asset Management System (RBAC)",
+    name: "Enterprise Employee & Asset Management System — RBAC",
     description:
-      "A production-grade, crash-resilient Enterprise Asset & Workforce Management Platform built with Spring Boot 3, React 18, PostgreSQL 15, Redis 7, Distributed Rate Limiting, Optimistic Concurrency Control (@Version), and AWS Cloud Observability (Prometheus & Grafana).",
+      "A production-grade, crash-resilient Enterprise Asset & Workforce Management Platform built with Java, Spring Boot 3, React 18, PostgreSQL 15, Redis 7, Distributed Rate Limiting, Optimistic Concurrency Control (@Version), and AWS Cloud Observability (Prometheus & Grafana). Load-tested with 51,000 requests at 263.92 req/s with 0% errors (21.40 ms avg latency, 0.995 APDEX).",
     tags: [
       {
         name: "Spring Boot 3",
@@ -200,6 +206,10 @@ const projects: TProject[] = [
         name: "Grafana & Prometheus",
         color: "green-text-gradient",
       },
+      {
+        name: "Apache JMeter",
+        color: "pink-text-gradient",
+      },
     ],
     image: enterpriseAssetMgmt,
     sourceCodeLink:
@@ -207,13 +217,17 @@ const projects: TProject[] = [
     liveDemoLink: "http://65.1.91.228/login",
   },
   {
-    name: "Jira-Lite — Real-Time Collaborative Kanban Workspace",
+    name: "Real-Time Collaborative Workspace — Jira-Lite Kanban Tracker",
     description:
-      "A high-concurrency, enterprise-grade real-time collaborative Kanban project management platform engineered with MERN stack, Socket.io, Redis Pub/Sub, O(1) Fractional Indexing, 0ms Optimistic UI updates, and Optimistic Concurrency Control (OCC).",
+      "A high-concurrency, enterprise-grade real-time collaborative Kanban project management platform engineered with React 18, Node.js, Express.js, Redux Toolkit, Socket.io, Redis Pub/Sub, and PostgreSQL. Implements O(1) fractional midpoint indexing reducing DB writes by 98% (49 → 1) and server latency by 90.5% (~9.9 ms), multi-room sync (<1 KB broadcast), OCC conflict prevention, short-lived JWTs with rotating refresh cookies, and 89 automated tests.",
     tags: [
       {
-        name: "MERN Stack",
+        name: "React 18 & Redux",
         color: "blue-text-gradient",
+      },
+      {
+        name: "Node.js & Express",
+        color: "green-text-gradient",
       },
       {
         name: "Socket.io",
@@ -224,16 +238,12 @@ const projects: TProject[] = [
         color: "orange-text-gradient",
       },
       {
-        name: "React 18 & Redux",
+        name: "PostgreSQL",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Docker & Nginx",
         color: "blue-text-gradient",
-      },
-      {
-        name: "Node.js & Express",
-        color: "green-text-gradient",
-      },
-      {
-        name: "MongoDB Atlas",
-        color: "green-text-gradient",
       },
     ],
     image: jiraLite,
@@ -244,7 +254,7 @@ const projects: TProject[] = [
   {
     name: "AI-Powered Smart Document & Report Analyzer",
     description:
-      "An enterprise-grade, asynchronous document intelligence & RAG platform featuring multi-format ingestion (PDF/DOCX/Images/XLSX), BullMQ & Redis distributed worker pipelines, interactive citation-backed RAG chat, SHA-256 deduplication cache (<15ms), and 6 specialized domain reasoning studios.",
+      "An enterprise-grade, asynchronous document intelligence & RAG platform featuring multi-format ingestion (PDF/DOCX/Images/XLSX), BullMQ & Redis distributed worker pipelines, SHA-256 deduplication cache (<15 ms, 99.9% duplicate latency reduction), dual-LLM pipeline (Google Gemini + Groq with Zod validation), citation-backed RAG engine, and Docker Compose deployment.",
     tags: [
       {
         name: "React 18 & Vite",
@@ -276,7 +286,6 @@ const projects: TProject[] = [
       "https://github.com/aadarsh2006ak/Ai-Powered-Smart-Documentation-Report-Analyzer.git",
     liveDemoLink: "https://smartdoc-analyzer-ui.onrender.com",
   },
-  // Future projects will be appended here in order:
 ];
 
 export { services, technologies, experiences, projects };

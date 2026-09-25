@@ -4,6 +4,24 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body,
+#root {
+  background-color: #050816 !important;
+  color: #ffffff;
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overscroll-behavior-y: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +29,44 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   color-scheme: dark;
+}
+
+/* Fallback hero pattern */
+.bg-hero-pattern {
+  background-image: url("./assets/herobg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #050816;
+}
+
+/* Vertical Timeline Dark Mode Enhancements */
+.vertical-timeline {
+  padding: 1.5em 0 !important;
+}
+
+.vertical-timeline::before {
+  background: linear-gradient(180deg, #915eff 0%, #00f2fe 50%, #915eff 100%) !important;
+  width: 3px !important;
+  box-shadow: 0 0 12px rgba(145, 94, 255, 0.5) !important;
+}
+
+.vertical-timeline-element-content {
+  background: #1d1836 !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 1rem !important;
+}
+
+.vertical-timeline-element-content-arrow {
+  border-right: 7px solid #1d1836 !important;
+}
+
+@media only screen and (max-width: 1169px) {
+  .vertical-timeline-element-content-arrow {
+    border-right: 7px solid #1d1836 !important;
+    border-left-color: transparent !important;
+  }
 }
 
 .hash-span {
@@ -62,6 +118,7 @@
     #f5af19
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -78,6 +135,7 @@
     #38ef7d
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -95,6 +153,7 @@
     #56ccf2
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -111,6 +170,7 @@
     #fc6767
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -256,6 +316,7 @@
   );
   background-size: 300% 300%;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textShimmer 6s ease infinite;
 }

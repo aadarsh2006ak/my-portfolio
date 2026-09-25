@@ -19,7 +19,7 @@ const emailjsConfig = {
 };
 
 const Contact = () => {
-  const formRef = useRef<React.LegacyRef<HTMLFormElement> | undefined>();
+  const formRef = useRef<HTMLFormElement | null>(null);
   const [form, setForm] = useState(INITIAL_STATE);
   const [loading, setLoading] = useState(false);
 
@@ -37,6 +37,15 @@ const Contact = () => {
 
     if (!form.name?.trim() || !form.email?.trim() || !form.message?.trim()) {
       alert("Please fill in all fields before sending.");
+      return;
+    }
+
+    if (
+      !emailjsConfig.serviceId ||
+      !emailjsConfig.templateId ||
+      !emailjsConfig.publicKey
+    ) {
+      alert("Email service configuration is missing. Please check your environment variables.");
       return;
     }
 
@@ -64,8 +73,8 @@ const Contact = () => {
         (error) => {
           setLoading(false);
 
-          console.log(error);
-          alert("Something went wrong.");
+          console.error("EmailJS Error:", error);
+          alert("Something went wrong while sending your message. Please try reaching out directly via email.");
         }
       );
   };
@@ -76,15 +85,14 @@ const Contact = () => {
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="bg-black-100 flex-[0.75] rounded-2xl p-8"
+        className="bg-black-100/90 backdrop-blur-md border border-white/10 flex-[0.75] rounded-2xl p-6 sm:p-8 shadow-xl"
       >
         <Header useMotion={false} {...config.contact} />
 
         <form
-          // @ts-expect-error
           ref={formRef}
           onSubmit={handleSubmit}
-          className="mt-12 flex flex-col gap-8"
+          className="mt-8 sm:mt-12 flex flex-col gap-6 sm:gap-8"
         >
           {Object.keys(config.contact.form).map((input) => {
             const { span, placeholder } =
@@ -93,7 +101,7 @@ const Contact = () => {
 
             return (
               <label key={input} className="flex flex-col">
-                <span className="mb-4 font-medium text-white">{span}</span>
+                <span className="mb-2.5 sm:mb-4 font-medium text-white text-sm sm:text-base">{span}</span>
                 <Component
                   type={input === "email" ? "email" : "text"}
                   name={input}
@@ -101,17 +109,18 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder={placeholder}
                   required
-                  className="bg-tertiary placeholder:text-secondary rounded-lg border-none px-6 py-4 font-medium text-white outline-none"
-                  {...(input === "message" && { rows: 7 })}
+                  className="bg-tertiary/90 placeholder:text-secondary rounded-xl border border-white/10 focus:border-purple-500 px-4 sm:px-6 py-3.5 sm:py-4 font-medium text-[16px] sm:text-[14.5px] text-white outline-none transition-colors"
+                  {...(input === "message" && { rows: 6 })}
                 />
               </label>
             );
           })}
           <button
             type="submit"
-            className="bg-tertiary shadow-primary w-fit rounded-xl px-8 py-3 font-bold text-white shadow-md outline-none"
+            disabled={loading}
+            className="bg-gradient-to-r from-[#915eff] to-[#703bf7] hover:from-[#804bee] hover:to-[#602ce6] shadow-lg shadow-purple-600/30 w-full sm:w-fit rounded-xl px-8 py-3.5 font-bold text-white outline-none active:scale-95 transition-all cursor-pointer disabled:opacity-50"
           >
-            {loading ? "Sending..." : "Send"}
+            {loading ? "Sending..." : "Send Message"}
           </button>
         </form>
       </motion.div>

@@ -39,13 +39,16 @@ type TConfig = {
 
 export const config: TConfig = {
   html: {
-    title: "Aadarsh — Portfolio",
+    title: "Aadarsh — SDE & Full Stack Developer",
     fullName: "Aadarsh",
-    email: "Kumar869645@gmail.com",
+    email: "kumar869645@gmail.com",
   },
   hero: {
     name: "Aadarsh",
-    p: ["Develop interactive user interfaces,", "real-time systems, and dynamic web applications."],
+    p: [
+      "SDE / Java Developer & Full Stack Developer specializing in Java, Spring Boot, and MERN architectures.",
+      "Engineering scalable, high-concurrency, and production-grade systems.",
+    ],
   },
   contact: {
     p: "Get in touch",
@@ -66,20 +69,16 @@ export const config: TConfig = {
     about: {
       p: "Introduction",
       h2: "Overview.",
-      content: `Hi, I’m Aadarsh Kumar, a passionate 3rd-year B.Tech Computer Science and Engineering student focused on building modern and impactful software solutions. I enjoy developing interactive web applications and exploring technologies such as Java, React.js, MySQL, Firebase, and modern frontend frameworks. My projects include real-world applications featuring dynamic user experiences, real-time functionality, and scalable design. Alongside development, I continuously strengthen my Data Structures & Algorithms skills and explore emerging technologies to expand my technical expertise. I’m currently seeking internship opportunities to apply my skills, solve meaningful problems, and grow as a software engineer.`,
+      content: `Full Stack Developer and Computer Science undergraduate 3rd YEAR (2024–2028 at Ganga Institute of Technology & Management) specializing in Java, Spring Boot, and MERN architectures. Proven track record of engineering scalable, secure backend systems, highlighted by building an enterprise RBAC platform that sustained 51,000+ API requests with a 0.995 APDEX and 0% error rate. Strong foundation in Data Structures & Algorithms, PostgreSQL/MongoDB database design, and modern DevOps practices (Docker, Prometheus, Grafana) to deliver high-performance, production-ready software.`,
     },
     experience: {
-      p: "What I have done so far",
-      h2: "Work Experience.",
+      p: "Engineering Evolution & Milestones",
+      h2: "Experience & Journey.",
     },
     works: {
       p: "My work",
       h2: "Projects.",
-      content: `Following projects showcases my skills and experience through
-    real-world examples of my work. Each project is briefly described with
-    links to code repositories and live demos in it. It reflects my
-    ability to solve complex problems, work with different technologies,
-    and manage projects effectively.`,
+      content: `The following projects demonstrate my expertise in building high-concurrency distributed systems, production-grade enterprise backends, and AI-powered document intelligence platforms. Each project includes GitHub source code, live deployment links, and detailed metrics.`,
     },
   },
 };
@@ -89,6 +88,8 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/aadarsh-kumar-646361335",
   instagram: "https://www.instagram.com/aadarsh_2006_ak",
   leetcode: "https://leetcode.com/u/aadarsh_2026/",
-  email: "mailto:Kumar869645@gmail.com",
+  email: "mailto:kumar869645@gmail.com",
+  phone: "+91-8595814064",
+  location: "Delhi, India",
 };
 

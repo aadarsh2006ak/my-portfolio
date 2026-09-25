@@ -11,6 +11,7 @@ import About from "./sections/About";
 import Tech from "./sections/Tech";
 import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
+import Education from "./sections/Education";
 import Contact from "./sections/Contact";
 import CanvasLoader from "./layout/Loader";
 import Chatbot from "./chatbot/Chatbot";
@@ -23,6 +24,7 @@ export {
   Tech,
   Experience,
   Projects,
+  Education,
   Contact,
   Chatbot,
   Footer,

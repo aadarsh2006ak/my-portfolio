@@ -1,12 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-
 import { config } from "../../constants/config";
-import {
-  projects,
-  experiences,
-  technologies,
-} from "../../constants";
+import { projects, experiences } from "../../constants";
 
 interface Message {
   role: "user" | "model";
@@ -18,40 +13,69 @@ interface Message {
 ========================================================= */
 
 const SYSTEM_PROMPT = `
-You are the friendly and professional AI Portfolio Assistant for Aadarsh Kumar.
+You are the friendly and professional AI Portfolio Assistant for Aadarsh (Aadarsh Kumar).
 
-Your job is to answer questions about Aadarsh Kumar's portfolio, skills,
-projects, education, experience, and contact information.
+Your job is to answer questions about Aadarsh's portfolio, skills,
+projects, education, internships, certifications, and contact information.
 
 IMPORTANT RULES:
 
 1. Be friendly, professional, concise, and helpful.
 2. Only use the factual information provided below.
 3. Never invent personal information, projects, companies, skills, or experience.
-4. If asked about hiring or contacting Aadarsh, provide his email and GitHub.
+4. If asked about hiring or contacting Aadarsh, provide his email (${config.html.email}), phone (+91-8595814064), and LinkedIn / GitHub links.
 5. Use bullet points when useful.
-6. If a question is unrelated to Aadarsh or software development,
+6. If a question is unrelated to Aadarsh or software engineering,
    politely redirect the user toward his portfolio, projects, skills,
    or experience.
 
-Aadarsh Kumar Information:
+Aadarsh's Information from Resume:
 
 Name:
-Aadarsh Kumar
-
-Education:
-3rd-year B.Tech in Computer Science and Engineering
+Aadarsh (Aadarsh Kumar)
 
 Roles:
-Frontend Developer
-MERN Stack Developer
-Full Stack Developer
-Software Engineer
+SDE / Java Developer | Full Stack Developer
+
+Location:
+Delhi, India
+
+Contact:
+Email: kumar869645@gmail.com
+Phone: +91-8595814064
+GitHub: https://github.com/aadarsh2006ak
+LinkedIn: https://www.linkedin.com/in/aadarsh-kumar-646361335
+LeetCode: https://leetcode.com/u/aadarsh_2026/
+Portfolio: https://aadarsh-portfolio.vercel.app / Current Website
+
+Education:
+B.Tech (3rd Year) in Computer Science & Engineering (2024–2028)
+Ganga Institute of Technology & Management
 
 Technical Skills:
-${technologies
-  .map((technology) => technology.name)
-  .join(", ")}
+- Languages: Java, JavaScript, C++, SQL
+- Backend & Security: Spring Boot, Spring Security, Spring Data JPA, Hibernate, Node.js, Express.js, REST APIs, JWT Authentication
+- Frontend: React.js, Redux Toolkit, Tailwind CSS, Vite, HTML5, CSS3
+- Databases & Caching: PostgreSQL, MongoDB, Redis
+- Testing & Monitoring: JUnit 5, Mockito, Testcontainers, Apache JMeter, Prometheus, Grafana, Micrometer
+- DevOps & Tools: Docker, Docker Compose, Git, GitHub, Maven, Postman, GitHub Actions, Nginx
+- Core Fundamentals: Data Structures & Algorithms, Object-Oriented Programming, DBMS, Operating Systems, Computer Networks, Concurrency & Multithreading
+- AI & Cloud: LLM APIs, Gemini API, Groq API, AWS S3, Cloudinary
+
+Certifications & Achievements:
+- Hack or Crack 2.0 (CTF): Solved algorithmic & cybersecurity challenges.
+- Tech4Hack — Thoughtworks: Built an AI Resume Analyzer in a team hackathon.
+
+Work Experience:
+${experiences
+  .map(
+    (experience) => `
+- ${experience.title} at ${experience.companyName} (${experience.date})
+  Responsibilities:
+  ${experience.points.join(" ")}
+`
+  )
+  .join("\n")}
 
 Projects:
 ${projects
@@ -63,30 +87,13 @@ ${projects
     .map((tag) => tag.name)
     .join(", ")}
   GitHub: ${project.sourceCodeLink}
+  Live Demo: ${project.liveDemoLink}
 `
   )
   .join("\n")}
-
-Work Experience:
-${experiences
-  .map(
-    (experience) => `
-- ${experience.title}
-  Company: ${experience.companyName}
-  Date: ${experience.date}
-  Responsibilities:
-  ${experience.points.join(" ")}
-`
-  )
-  .join("\n")}
-
-Contact:
-Email: ${config.html.email}
-GitHub: https://github.com/aadarsh2006ak
-LeetCode: https://leetcode.com/u/aadarsh_2026/
 
 Resume:
-Available on the portfolio website.
+Available for direct download as /Aadarsh.pdf on the website.
 `;
 
 /* =========================================================
@@ -217,46 +224,72 @@ export const Chatbot: React.FC = () => {
         }));
 
       /* ===================================================
-         GEMINI API
-
-         ONLY ONE CURRENT MODEL
-
-         Do NOT try old models.
+         GEMINI API WITH SMART MODEL FALLBACK
       =================================================== */
 
-      const response = await fetch(
-        "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent",
-        {
-          method: "POST",
+      const candidateModels = [
+        "gemini-1.5-flash",
+        "gemini-2.0-flash",
+        "gemini-1.5-pro",
+      ];
 
-          headers: {
-            "Content-Type": "application/json",
-            "x-goog-api-key": apiKey,
-          },
+      let response: Response | null = null;
+      let data: any = null;
+      let lastErrorMessage = "";
 
-          body: JSON.stringify({
-            system_instruction: {
-              parts: [
-                {
-                  text: SYSTEM_PROMPT,
+      for (const modelName of candidateModels) {
+        try {
+          const res = await fetch(
+            `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent`,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "x-goog-api-key": apiKey,
+              },
+              body: JSON.stringify({
+                system_instruction: {
+                  parts: [
+                    {
+                      text: SYSTEM_PROMPT,
+                    },
+                  ],
                 },
-              ],
-            },
+                contents: conversation,
+                generationConfig: {
+                  maxOutputTokens: 600,
+                },
+              }),
+            }
+          );
 
-            contents: conversation,
-
-            generationConfig: {
-              maxOutputTokens: 600,
-            },
-          }),
+          const resultData = await res.json();
+          if (res.ok) {
+            response = res;
+            data = resultData;
+            break;
+          } else {
+            lastErrorMessage =
+              resultData?.error?.message || `Request failed with status ${res.status}`;
+            // If it's a 404 (model not found), try next model in fallback list
+            if (res.status === 404) {
+              continue;
+            } else {
+              response = res;
+              data = resultData;
+              break;
+            }
+          }
+        } catch (err: any) {
+          lastErrorMessage = err?.message || "Network error";
         }
-      );
+      }
 
-      /* ===================================================
-         RESPONSE
-      =================================================== */
-
-      const data = await response.json();
+      if (!response || !data) {
+        throw new Error(
+          lastErrorMessage || "Unable to connect to Gemini API. Please check your network connection."
+        );
+      }
 
       console.log("Gemini API Response:", data);
 
@@ -415,7 +448,7 @@ export const Chatbot: React.FC = () => {
               duration: 0.25,
               ease: "easeOut",
             }}
-            className="mb-4 flex flex-col h-[520px] w-[calc(100vw-2rem)] sm:w-[360px] md:w-[390px] rounded-2xl bg-[#100d25]/95 backdrop-blur-xl border border-purple-500/30 shadow-2xl shadow-purple-900/40 overflow-hidden"
+            className="mb-3 sm:mb-4 flex flex-col h-[min(520px,calc(100dvh-6rem))] max-h-[540px] w-[calc(100vw-2rem)] sm:w-[360px] md:w-[390px] rounded-2xl bg-[#100d25]/95 backdrop-blur-xl border border-purple-500/30 shadow-2xl shadow-purple-900/40 overflow-hidden"
           >
 
             {/* =================================================
@@ -686,7 +719,7 @@ export const Chatbot: React.FC = () => {
                   onKeyDown={handleKeyDown}
                   placeholder="Ask me anything..."
                   disabled={isLoading}
-                  className="flex-1 bg-transparent text-[13.5px] text-white placeholder:text-secondary outline-none disabled:opacity-50"
+                  className="flex-1 bg-transparent text-[16px] sm:text-[13.5px] text-white placeholder:text-secondary outline-none disabled:opacity-50"
                 />
 
                 <button

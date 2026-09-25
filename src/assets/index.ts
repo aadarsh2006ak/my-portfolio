@@ -17,6 +17,10 @@ import java1 from "./tech/java.png";
 import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
 import tailwind from "./tech/tailwind.png";
+import typescript from "./tech/typescript.png";
+import springboot from "./tech/springboot.svg";
+import postgresql from "./tech/postgresql.svg";
+import redis from "./tech/redis.svg";
 
 import html5 from "./company/html5.png";
 import uptoskills from "./company/uptoskills.png";
@@ -31,7 +35,7 @@ import placementhub from "./projects/placementhub.png";
 import chatbot from "./projects/chatbot.png";
 import smartDocAnalyzer from "./projects/smartDocAnalyzer.png";
 import techInternshipPortal from "./projects/techInternshipPortal.png";
-import leetcode from "./tech/leetcode.png"
+import leetcode from "./tech/leetcode.png";
 
 export {
   enterpriseAssetMgmt,
@@ -65,4 +69,8 @@ export {
   nodejs,
   reactjs,
   tailwind,
+  typescript,
+  springboot,
+  postgresql,
+  redis,
 };
