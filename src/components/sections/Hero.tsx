@@ -16,7 +16,9 @@ const Hero = () => {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== "undefined" && window.innerWidth <= 768
+  );
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");

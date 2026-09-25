@@ -5,7 +5,9 @@ import { SectionWrapper } from "../../hoc";
 import { technologies } from "../../constants";
 
 const Tech = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== "undefined" && window.innerWidth <= 768
+  );
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");

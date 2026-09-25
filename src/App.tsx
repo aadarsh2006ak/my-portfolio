@@ -25,9 +25,9 @@ const App: React.FC = () => {
 
   return (
     <BrowserRouter>
-      <div className="bg-primary relative z-0">
+      <div className="bg-primary relative z-0 overflow-x-hidden w-full max-w-full min-h-screen">
         <StarsCanvas />
-        <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
+        <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat w-full overflow-hidden">
           <Navbar />
           <Hero />
         </div>
