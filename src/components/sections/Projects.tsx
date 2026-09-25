@@ -147,6 +147,7 @@ const Projects = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const scrollPosRef = useRef<number>(0);
   const isPausedRef = useRef<boolean>(false);
+  const isUserInteractingRef = useRef<boolean>(false);
   const resumeTimerRef = useRef<any>(null);
 
   const [isDragging, setIsDragging] = useState(false);
@@ -186,7 +187,7 @@ const Projects = () => {
       const delta = Math.min((time - lastTime) / 1000, 0.1);
       lastTime = time;
 
-      if (!isPausedRef.current && container) {
+      if (!isPausedRef.current && !isUserInteractingRef.current && container) {
         const halfWidth = container.scrollWidth / 2;
         if (halfWidth > 0) {
           scrollPosRef.current += 40 * delta; // 40px per second smooth auto-scroll
@@ -212,7 +213,7 @@ const Projects = () => {
     };
   }, []);
 
-  // Sync scroll position during manual interaction (Touch or Mouse)
+  // Sync scroll position during manual interaction (Touch, Mouse, or Wheel)
   const handleScroll = () => {
     if (!scrollRef.current) return;
     const container = scrollRef.current;
@@ -226,20 +227,22 @@ const Projects = () => {
       }
     }
 
-    scrollPosRef.current = container.scrollLeft;
-
-    // Pause auto-scroll briefly during active scrolling
-    isPausedRef.current = true;
-    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
-    resumeTimerRef.current = setTimeout(() => {
-      isPausedRef.current = false;
-    }, 2500);
+    if (isUserInteractingRef.current) {
+      scrollPosRef.current = container.scrollLeft;
+      isPausedRef.current = true;
+      if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+      resumeTimerRef.current = setTimeout(() => {
+        isUserInteractingRef.current = false;
+        isPausedRef.current = false;
+      }, 1200);
+    }
   };
 
   // Manual Drag-to-Scroll handlers (Mouse)
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!scrollRef.current) return;
     setIsDragging(true);
+    isUserInteractingRef.current = true;
     isPausedRef.current = true;
     if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
 
@@ -251,7 +254,7 @@ const Projects = () => {
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isDragging || !scrollRef.current) return;
     const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 1.15;
+    const walk = (x - startX) * 1.25;
     let newPos = scrollLeftPos - walk;
 
     const halfWidth = scrollRef.current.scrollWidth / 2;
@@ -272,12 +275,14 @@ const Projects = () => {
     }
     if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
     resumeTimerRef.current = setTimeout(() => {
+      isUserInteractingRef.current = false;
       isPausedRef.current = false;
-    }, 2000);
+    }, 1200);
   };
 
-  // Touch Handlers for Mobile Devices
+  // Touch Handlers for Mobile Devices (Bi-directional Swipe)
   const handleTouchStart = () => {
+    isUserInteractingRef.current = true;
     isPausedRef.current = true;
     if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
     if (scrollRef.current) {
@@ -291,13 +296,15 @@ const Projects = () => {
     }
     if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
     resumeTimerRef.current = setTimeout(() => {
+      isUserInteractingRef.current = false;
       isPausedRef.current = false;
-    }, 2500);
+    }, 1200);
   };
 
   // Quick Navigation Button Handler (< and >)
   const handleManualNav = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
+    isUserInteractingRef.current = true;
     isPausedRef.current = true;
     if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
 
@@ -308,8 +315,12 @@ const Projects = () => {
     });
 
     resumeTimerRef.current = setTimeout(() => {
+      if (scrollRef.current) {
+        scrollPosRef.current = scrollRef.current.scrollLeft;
+      }
+      isUserInteractingRef.current = false;
       isPausedRef.current = false;
-    }, 3000);
+    }, 1800);
   };
 
   return (
@@ -382,10 +393,6 @@ const Projects = () => {
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUpOrLeave}
-          onMouseEnter={() => {
-            isPausedRef.current = true;
-            if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
-          }}
           onMouseLeave={handleMouseUpOrLeave}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
