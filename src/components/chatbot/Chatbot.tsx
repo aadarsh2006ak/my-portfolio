@@ -228,9 +228,12 @@ export const Chatbot: React.FC = () => {
       =================================================== */
 
       const candidateModels = [
-        "gemini-1.5-flash",
-        "gemini-2.0-flash",
-        "gemini-1.5-pro",
+        "gemini-3-flash-preview",
+        "gemini-3.6-flash",
+        "gemini-3.5-flash",
+        "gemini-3.7-flash",
+        "gemini-3.8-flash",
+        "gemini-flash-latest",
       ];
 
       let response: Response | null = null;
@@ -264,15 +267,15 @@ export const Chatbot: React.FC = () => {
           );
 
           const resultData = await res.json();
-          if (res.ok) {
+          if (res.ok && resultData?.candidates?.[0]) {
             response = res;
             data = resultData;
             break;
           } else {
             lastErrorMessage =
               resultData?.error?.message || `Request failed with status ${res.status}`;
-            // If it's a 404 (model not found), try next model in fallback list
-            if (res.status === 404) {
+            // If model is not found, deprecated, busy, or rate limited, try next model
+            if (res.status === 404 || res.status === 503 || res.status === 429) {
               continue;
             } else {
               response = res;
