@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" width="400" height="220">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#1a1c2e" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#0e101c" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#080911" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="akGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#242636"/>
+      <stop offset="100%" stop-color="#141522"/>
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="purpleGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#915eff"/>
+      <stop offset="100%" stop-color="#703bf7"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background with ambient glow -->
+  <rect width="400" height="220" fill="url(#bgGlow)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.07" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="44" x2="400" y2="44"/>
+    <line x1="0" y1="88" x2="400" y2="88"/>
+    <line x1="0" y1="132" x2="400" y2="132"/>
+    <line x1="0" y1="176" x2="400" y2="176"/>
+    <line x1="80" y1="0" x2="80" y2="220"/>
+    <line x1="160" y1="0" x2="160" y2="220"/>
+    <line x1="240" y1="0" x2="240" y2="220"/>
+    <line x1="320" y1="0" x2="320" y2="220"/>
+  </g>
+
+  <!-- Ambient background glow behind favicon -->
+  <circle cx="200" cy="58" r="50" fill="#f59e0b" opacity="0.15" filter="url(#glow)"/>
+  <circle cx="200" cy="58" r="35" fill="#915eff" opacity="0.2" filter="url(#glow)"/>
+
+  <!-- Centered Favicon Badge (Exact AkStore Favicon Shape & Design) -->
+  <g transform="translate(166, 24)">
+    <!-- Background Rounded Badge -->
+    <rect width="68" height="68" rx="18" fill="url(#akGrad)" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+    <rect x="2" y="2" width="64" height="64" rx="16" fill="none" stroke="url(#goldAccent)" stroke-opacity="0.35" stroke-width="1"/>
+
+    <!-- Shopping Bag Handle -->
+    <path d="M25 24 C25 17 43 17 43 24" fill="none" stroke="url(#goldAccent)" stroke-width="3.2" stroke-linecap="round"/>
+
+    <!-- Shopping Bag Body -->
+    <path d="M17 25 L51 25 L47 54 C47 56.5 44.5 58.5 41.5 58.5 L26.5 58.5 C23.5 58.5 21 56.5 21 54 Z" fill="#1b1d2a" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1.5"/>
+
+    <!-- AK Monogram Text -->
+    <text x="34" y="45.5" font-family="'Segoe UI', Roboto, 'Inter', 'Arial', sans-serif" font-size="15" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1.2">AK</text>
+    
+    <!-- Spark / Luxury dot -->
+    <circle cx="45" cy="35.5" r="2.2" fill="url(#goldAccent)"/>
+  </g>
+
+  <!-- Brand Typography -->
+  <text x="200" y="125" font-family="'Segoe UI', Roboto, 'Inter', 'Arial', sans-serif" font-size="19" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">
+    AkStore
+  </text>
+  <text x="200" y="145" font-family="'Segoe UI', Roboto, 'Inter', 'Arial', sans-serif" font-size="10.5" font-weight="600" fill="#94a3b8" text-anchor="middle" letter-spacing="2.5">
+    FIND WHAT MOVES YOU
+  </text>
+
+  <!-- Feature Tags / Badges Row -->
+  <g transform="translate(62, 166)">
+    <!-- Pill 1: E-Commerce Storefront -->
+    <rect x="0" y="0" width="130" height="26" rx="13" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <circle cx="14" cy="13" r="3.5" fill="#10b981"/>
+    <text x="73" y="17" font-family="'Segoe UI', Roboto, 'Inter', 'Arial', sans-serif" font-size="10.5" font-weight="600" fill="#e2e8f0" text-anchor="middle">MERN Storefront</text>
+
+    <!-- Pill 2: Razorpay & Stripe Payments -->
+    <rect x="144" y="0" width="132" height="26" rx="13" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <circle cx="158" cy="13" r="3.5" fill="#f59e0b"/>
+    <text x="219" y="17" font-family="'Segoe UI', Roboto, 'Inter', 'Arial', sans-serif" font-size="10.5" font-weight="600" fill="#e2e8f0" text-anchor="middle">Razorpay &amp; Stripe</text>
+  </g>
+</svg>

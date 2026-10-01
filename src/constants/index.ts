@@ -13,6 +13,7 @@ import {
   enterpriseAssetMgmt,
   jiraLite,
   smartDocAnalyzer,
+  akstoreEcommerce,
   html5,
   uptoskills,
   mobile,
@@ -285,6 +286,45 @@ const projects: TProject[] = [
     sourceCodeLink:
       "https://github.com/aadarsh2006ak/Ai-Powered-Smart-Documentation-Report-Analyzer.git",
     liveDemoLink: "https://smartdoc-analyzer-ui.onrender.com",
+  },
+  {
+    name: "AkStore — Full-Stack MERN E-Commerce Platform",
+    description:
+      "A production-grade full-stack E-Commerce storefront and admin system featuring dynamic category & type multi-filtering, instant search, multi-size persistent cart, token-based cloud synchronization, Cloudinary media CDN, and multi-gateway checkout integrations (Razorpay, Stripe & Cash on Delivery).",
+    tags: [
+      {
+        name: "React 18 & Vite",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Node.js & Express",
+        color: "green-text-gradient",
+      },
+      {
+        name: "MongoDB Atlas",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Tailwind CSS",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Razorpay & Stripe",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "Cloudinary CDN",
+        color: "green-text-gradient",
+      },
+      {
+        name: "JWT Auth & Admin Panel",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: akstoreEcommerce,
+    sourceCodeLink:
+      "https://github.com/aadarsh2006ak/INIB-E-COMMERCE-STORE-fullstack.git",
+    liveDemoLink: "https://akstores.netlify.app/",
   },
 ];
 
