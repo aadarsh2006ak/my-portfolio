@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5D77F"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#AA771C"/>
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1C24"/>
+      <stop offset="100%" stop-color="#0B0C10"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#D4AF37" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  
+  <!-- Outer Rounded Shield / Badge -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bgGrad)" stroke="url(#goldGrad)" stroke-width="2"/>
+  
+  <!-- Glowing Restaurant Cloche Cover / Emblem -->
+  <g filter="url(#glow)">
+    <!-- Top Handle -->
+    <circle cx="32" cy="18" r="3.5" fill="url(#goldGrad)"/>
+    <path d="M30.5 19.5 L33.5 19.5 L33.5 22.5 L30.5 22.5 Z" fill="url(#goldGrad)"/>
+    
+    <!-- Dome -->
+    <path d="M14 38 C14 26 22 22 32 22 C42 22 50 26 50 38 Z" fill="url(#goldGrad)" opacity="0.95"/>
+    
+    <!-- Tray / Base -->
+    <rect x="11" y="39.5" width="42" height="4" rx="2" fill="url(#goldGrad)"/>
+    
+    <!-- Plate Steam Accent lines -->
+    <path d="M25 15 Q27 11 25 8" stroke="url(#goldGrad)" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.8"/>
+    <path d="M32 14 Q34 10 32 6" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M39 15 Q41 11 39 8" stroke="url(#goldGrad)" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.8"/>
+    
+    <!-- Star Accent in bottom center -->
+    <polygon points="32,46 33.5,49.5 37,50 34.5,52.5 35,56 32,54 29,56 29.5,52.5 27,50 30.5,49.5" fill="url(#goldGrad)"/>
+  </g>
+</svg>

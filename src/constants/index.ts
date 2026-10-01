@@ -14,6 +14,7 @@ import {
   jiraLite,
   smartDocAnalyzer,
   akstoreEcommerce,
+  restaurantMgmtSys,
   html5,
   uptoskills,
   mobile,
@@ -325,6 +326,41 @@ const projects: TProject[] = [
     sourceCodeLink:
       "https://github.com/aadarsh2006ak/INIB-E-COMMERCE-STORE-fullstack.git",
     liveDemoLink: "https://akstores.netlify.app/",
+  },
+  {
+    name: "Restaurant Management & Dining Platform — Full-Stack MERN",
+    description:
+      "A modern restaurant management & dining platform featuring an interactive digital ordering menu with real-time cuisine/dietary filtering, dynamic table booking engine, real-time kitchen order dispatch feed, role-based admin dashboard (CRUD menu & floor layouts), and JWT authentication.",
+    tags: [
+      {
+        name: "React 19 & Vite",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Node.js & Express",
+        color: "green-text-gradient",
+      },
+      {
+        name: "MongoDB Atlas",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Table Reservations",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "Kitchen POS & Dispatch",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "JWT Auth & RBAC",
+        color: "green-text-gradient",
+      },
+    ],
+    image: restaurantMgmtSys,
+    sourceCodeLink:
+      "https://github.com/aadarsh2006ak/Restaurent-mgmt-sys-fullstack.git",
+    liveDemoLink: "https://restaurent-mgmt-sys.netlify.app/",
   },
 ];
 

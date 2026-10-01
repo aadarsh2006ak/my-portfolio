@@ -36,6 +36,7 @@ import chatbot from "./projects/chatbot.png";
 import smartDocAnalyzer from "./projects/smartDocAnalyzer.png";
 import techInternshipPortal from "./projects/techInternshipPortal.png";
 import akstoreEcommerce from "./projects/akstore.svg";
+import restaurantMgmtSys from "./projects/restaurant.svg";
 import leetcode from "./tech/leetcode.png";
 
 export {
@@ -43,6 +44,7 @@ export {
   jiraLite,
   smartDocAnalyzer,
   akstoreEcommerce,
+  restaurantMgmtSys,
   leetcode,
   placementhub,
   chatbot,

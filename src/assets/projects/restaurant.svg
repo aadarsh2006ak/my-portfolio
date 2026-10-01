@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" width="400" height="220">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#1f1a10" stop-opacity="0.95"/>
+      <stop offset="60%" stop-color="#120e09" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#080705" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5D77F"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#AA771C"/>
+    </linearGradient>
+    <linearGradient id="badgeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1C24"/>
+      <stop offset="100%" stop-color="#0B0C10"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background with ambient warm culinary glow -->
+  <rect width="400" height="220" fill="url(#bgGlow)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.05" stroke="#D4AF37" stroke-width="1">
+    <line x1="0" y1="44" x2="400" y2="44"/>
+    <line x1="0" y1="88" x2="400" y2="88"/>
+    <line x1="0" y1="132" x2="400" y2="132"/>
+    <line x1="0" y1="176" x2="400" y2="176"/>
+    <line x1="80" y1="0" x2="80" y2="220"/>
+    <line x1="160" y1="0" x2="160" y2="220"/>
+    <line x1="240" y1="0" x2="240" y2="220"/>
+    <line x1="320" y1="0" x2="320" y2="220"/>
+  </g>
+
+  <!-- Ambient background glow behind favicon -->
+  <circle cx="200" cy="58" r="50" fill="#D4AF37" opacity="0.18" filter="url(#glow)"/>
+  <circle cx="200" cy="58" r="30" fill="#F5D77F" opacity="0.22" filter="url(#glow)"/>
+
+  <!-- Centered Favicon Badge (Exact Restaurant Favicon) -->
+  <g transform="translate(168, 22)">
+    <!-- Outer Rounded Shield / Badge -->
+    <rect x="0" y="0" width="64" height="64" rx="16" fill="url(#badgeBg)" stroke="url(#goldGrad)" stroke-width="2"/>
+    
+    <!-- Glowing Restaurant Cloche Cover / Emblem -->
+    <!-- Top Handle -->
+    <circle cx="32" cy="18" r="3.5" fill="url(#goldGrad)"/>
+    <path d="M30.5 19.5 L33.5 19.5 L33.5 22.5 L30.5 22.5 Z" fill="url(#goldGrad)"/>
+    
+    <!-- Dome -->
+    <path d="M14 38 C14 26 22 22 32 22 C42 22 50 26 50 38 Z" fill="url(#goldGrad)" opacity="0.95"/>
+    
+    <!-- Tray / Base -->
+    <rect x="11" y="39.5" width="42" height="4" rx="2" fill="url(#goldGrad)"/>
+    
+    <!-- Plate Steam Accent lines -->
+    <path d="M25 15 Q27 11 25 8" stroke="url(#goldGrad)" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.8"/>
+    <path d="M32 14 Q34 10 32 6" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M39 15 Q41 11 39 8" stroke="url(#goldGrad)" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.8"/>
+    
+    <!-- Star Accent in bottom center -->
+    <polygon points="32,46 33.5,49.5 37,50 34.5,52.5 35,56 32,54 29,56 29.5,52.5 27,50 30.5,49.5" fill="url(#goldGrad)"/>
+  </g>
+
+  <!-- Brand Typography -->
+  <text x="200" y="125" font-family="'Segoe UI', Roboto, 'Inter', 'Arial', sans-serif" font-size="18" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">
+    Gourmet Restaurant
+  </text>
+  <text x="200" y="145" font-family="'Segoe UI', Roboto, 'Inter', 'Arial', sans-serif" font-size="10" font-weight="600" fill="#d4af37" text-anchor="middle" letter-spacing="2">
+    DINING &amp; KITCHEN DISPATCH SYSTEM
+  </text>
+
+  <!-- Feature Tags / Badges Row -->
+  <g transform="translate(48, 166)">
+    <!-- Pill 1: Customer & Dining Portal -->
+    <rect x="0" y="0" width="144" height="26" rx="13" fill="rgba(212,175,55,0.1)" stroke="rgba(212,175,55,0.3)" stroke-width="1"/>
+    <circle cx="14" cy="13" r="3.5" fill="#10b981"/>
+    <text x="80" y="17" font-family="'Segoe UI', Roboto, 'Inter', 'Arial', sans-serif" font-size="10" font-weight="600" fill="#f1f5f9" text-anchor="middle">Customer &amp; Table Booking</text>
+
+    <!-- Pill 2: Admin & Kitchen POS -->
+    <rect x="156" y="0" width="148" height="26" rx="13" fill="rgba(212,175,55,0.1)" stroke="rgba(212,175,55,0.3)" stroke-width="1"/>
+    <circle cx="170" cy="13" r="3.5" fill="#f59e0b"/>
+    <text x="238" y="17" font-family="'Segoe UI', Roboto, 'Inter', 'Arial', sans-serif" font-size="10" font-weight="600" fill="#f1f5f9" text-anchor="middle">Kitchen POS &amp; Live Orders</text>
+  </g>
+</svg>
